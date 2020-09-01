@@ -6,8 +6,11 @@
 
   <% blogPosts.forEach(function(blogPost) { %>
       <h1><%= blogPost.title %></h1>
-      <p><%= blogPost.content %></p>
-  <% }); %>
+      <p>
+        <%= blogPost.content.substr(0, 50) %>
+        (<a href="posts/<%= blogPost.kebabTitle %>">...</a>)
+      </p>
 
+  <% }); %>
 
 <%- include("partials/footer") -%>
